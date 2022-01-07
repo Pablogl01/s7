@@ -1,0 +1,22 @@
+<div id="homeSupT">
+    <div id="homeTotal">
+        <a routerLink="">Volver</a>
+        <p id="f1">¿Que quieres hacer?</p>
+        <div id="cont_prices">
+            <div><input type="checkbox" id="c1" value="first_checkbox" (click)="refresh_price('c1')"> <label for="cbox1">Una pagina web (500€)</label></div>
+            <app-panell *ngIf=pll ></app-panell>
+            <div><input type="checkbox" id="c2" value="second_checkbox" (click)="refresh_price('c2')"> <label for="cbox2">Una conslutoria SEO (300€)</label></div>
+            <div><input type="checkbox" id="c3" value="third_checkbox" (click)="refresh_price('c3')"> <label for="cbox3">Una campaña de Goole Ads (200€)</label></div>
+        </div>
+        <p>Precio: {{pressupostTotalService.sharedPrice}}€</p>
+        <form id="nombres">
+            <label for="nombre">Indica tu nombre: </label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="nombreProyecto" class="mt-2">Indica un nombre para tu proyecto</label>
+            <input type="text" name="nombreProyecto" id="nombreProyecto">
+            <button type="submit" class="btn btn-success mt-2" (click)="savePress()">Guardar</button>
+        </form>
+    </div>
+    <app-pressuport-list></app-pressuport-list>
+</div>
+

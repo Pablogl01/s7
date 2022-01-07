@@ -1,0 +1,36 @@
+#cont_prices{
+    display:flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+    background-color: grey;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+#f1{
+    margin-top: 20px;
+}
+
+*{
+    font-family: 'Signika Negative', sans-serif;
+}
+
+#nombres{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+#homeTotal{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#homeSupT{
+    display: flex;
+    flex-direction: row;
+}

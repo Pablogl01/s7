@@ -1,0 +1,36 @@
+
+<table *ngIf="pressupostTotalService.showTable">
+    <input type="text" id="sPress" >
+    <button type="button" (click)="pressupostTotalService.findPress()">
+        <img id="search" src="https://cdn-icons.flaticon.com/png/512/3031/premium/3031293.png?token=exp=1640279929~hmac=89783a691b61e21191693c0d5797aa68">
+    </button>
+    <tr>
+        <th>Cliente</th>
+        <th>Proyecto</th>
+        <th>Servicios</th>
+        <th>Precio</th>
+        <th>Fecha</th>
+    </tr>
+    <tr *ngFor="let press of pressupostTotalService.arrayPress">
+        <td>
+            {{press.cliente}}
+        </td>
+        <td>
+            {{press.press}}
+        </td>
+        <td>
+            <span *ngIf="press.servicios.c1">Web</span>
+            <span *ngIf="press.servicios.c2">SEO</span>
+            <span *ngIf="press.servicios.c3">Google Adds</span>
+        </td>
+        <td>
+            {{press.price}}
+        </td>
+        <td>
+            {{press.date.day}}/{{press.date.month}}/{{press.date.year}}  {{press.date.hours}}:{{press.date.mins}}:{{press.date.secs}}
+        </td>
+    </tr>
+    <button type="button" class="btn btn-success mt-2" (click)="pressupostTotalService.orderPressByPress()">Proyecto</button>
+    <button type="button" class="btn btn-success mt-2" (click)="pressupostTotalService.orderPressByDate()">Fecha</button>
+    <button type="button" class="btn btn-success mt-2" (click)="pressupostTotalService.resetOrder()">Reiniciar</button>
+</table>

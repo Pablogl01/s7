@@ -1,0 +1,30 @@
+<form novalidate [formGroup]="numeros">
+    <div>
+        <span>Numero de páginas </span>
+        <label>
+            <button (click)="sumPag()">+</button>
+            <input  type="number" value=0 placeholder="0" formControlName="paginas">
+            <button (click)="resPag()">-</button>
+        </label>
+        <img class="info" src="https://cdn-icons.flaticon.com/png/128/471/premium/471713.png?token=exp=1640014261~hmac=62124b6db930734b5e8c4d1e1fd73f34" type="button" (click)="modal.open(contenido)" (click)="infoSel('pag')">
+    </div>
+    <div>
+        <span>Numero de idiomas </span>
+        <label>
+            <button (click)="sumIdi()">+</button>
+            <input type="number" value=0 placeholder="0" formControlName="idiomas">
+            <button (click)="resIdi()">-</button>
+        </label>
+        <img class="info" src="https://cdn-icons.flaticon.com/png/128/471/premium/471713.png?token=exp=1640014261~hmac=62124b6db930734b5e8c4d1e1fd73f34" type="button" (click)="modal.open(contenido)" (click)="infoSel('info')">
+    </div>
+</form>
+<div *ngIf="chS">
+    <p *ngIf="!numeros.controls['paginas'].valid">Es necesaio indicar un numero de paginas</p>
+    <p *ngIf="!numeros.controls['idiomas'].valid">Es necesaio indicar un numero de idiomas</p>
+</div>
+
+<ng-template #contenido let-modal>
+    <div class="modal-body">
+        En este componente debera indicar el numero de {{sel}} que tendra su web
+    </div>
+</ng-template>
